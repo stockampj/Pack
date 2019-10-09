@@ -42,7 +42,7 @@ namespace Pack.Models
                     return PackList[i];
                 }
             }
-            return PackItem.Name;
+            return null;
         }
     }
 }

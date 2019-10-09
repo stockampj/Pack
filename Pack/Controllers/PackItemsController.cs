@@ -6,6 +6,11 @@ namespace Pack.Controllers
 {
     public class PackItemsController : Controller
     {
+        [HttpGet("/packitems/new")]
+        public ActionResult New()
+        {
+            return View();
+        }
 
         [HttpPost("/packitems")]
         public ActionResult Index(string name, string size)
@@ -13,13 +18,20 @@ namespace Pack.Controllers
             PackItem packItem = new PackItem(name,size);
             List<PackItem> packList = PackItem.PackList;
             
+        
             return View("Index",packList);
         }
-
-        [HttpGet("/packitems/new")]
-        public ActionResult New()
+        
+        [HttpPost("/packitems/update")]
+        public ActionResult Index(List <int> item )
         {
-            return View();
+            foreach(int id in item)
+            {
+               PackItem packItem = PackItem.SearchID(id);
+               packItem.Packed =  true;
+            }
+            List<PackItem> packList = PackItem.PackList;
+            return View("Index",packList);
         }
 
         

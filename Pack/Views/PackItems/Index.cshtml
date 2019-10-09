@@ -11,16 +11,29 @@
   <body>
     <div class="container">
         <h2>My Pack List</h2>
-        <ul>
-          @foreach (PackItem packItem in Model)
-          {
-              <li> 
-                <input type="checkbox" name="@packItem.ID" value="true">
-                @packItem.Name  @packItem.Size 
-            
-              </li>
-          }
-          
-          </ul>
+        <form action="/packitems/update" method="post">
+          <ul>
+            @foreach (PackItem packItem in Model)
+            {
+                @if (packItem.Packed == true)
+                {
+                  <li> 
+                    <input class="yes" type="checkbox" name="item" value="@packItem.ID">
+                    @packItem.Name  @packItem.Size @packItem.Packed
+                  </li>
+                }
+                else
+                {
+                  <li> 
+                    <input type="checkbox" name="item" value="@packItem.ID">
+                    @packItem.Name  @packItem.Size @packItem.Packed
+                  </li>
+                }
+
+            }
+            </ul>
+            <button type="submit" class="btn btn-warning">Update Checklist</button>
+          </form>
+
   </body>
 </html>
