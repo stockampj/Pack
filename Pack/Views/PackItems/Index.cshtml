@@ -10,12 +10,15 @@
   </head>
   <body>
     <div class="container">
-        <p>packlistindex</p>
+        <h2>My Pack List</h2>
         <ul>
           @foreach (PackItem packItem in Model)
           {
               <li> 
-                <input type="checkbox" name="@packItem.ID" value="true"> </li>
+                <input type="checkbox" name="@packItem.ID" value="true">
+                @packItem.Name  @packItem.Size 
+            
+              </li>
           }
           
           </ul>

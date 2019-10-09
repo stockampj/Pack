@@ -33,5 +33,16 @@ namespace Pack.Models
                 }
             }
         }
+        public static PackItem SearchID(int id)
+        {
+            for(int i=0;i< PackList.Count;i++)
+            {
+                if (PackList[i].ID == id)
+                {
+                    return PackList[i];
+                }
+            }
+            return PackItem.Name;
+        }
     }
 }
