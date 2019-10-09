@@ -4,11 +4,17 @@ using System.Collections.Generic;
 
 namespace Pack.Controllers
 {
-    public class PackListsController : Controller
+    public class PackItemsController : Controller
     {
 
-        [HttpGet("/packlists")]
+        [HttpPost("/packitems")]
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        [HttpGet("/packitems/new")]
+        public ActionResult New()
         {
             return View();
         }
