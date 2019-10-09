@@ -38,6 +38,8 @@ namespace Pack.Controllers
             return View("Index",packList);
         }
 
+        // [HttpPost]("/pack")
+
         
     }
 }
