@@ -8,9 +8,11 @@ namespace Pack.Controllers
     {
 
         [HttpPost("/packitems")]
-        public ActionResult Index()
+        public ActionResult Index(string name, string size)
         {
-            return View();
+            PackItem packItem = new PackItem(name,size);
+            
+            return View("Index", packItem);
         }
 
         [HttpGet("/packitems/new")]
