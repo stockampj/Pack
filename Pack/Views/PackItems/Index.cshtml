@@ -17,8 +17,8 @@
             {
                 @if (packItem.Packed == true)
                 {
-                  <li> 
-                    <input class="yes" type="checkbox" name="item" value="@packItem.ID">
+                  <li class="yes"> 
+                    <input type="checkbox" name="item" value="@packItem.ID">
                     @packItem.Name  @packItem.Size @packItem.Packed
                   </li>
                 }

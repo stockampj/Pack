@@ -10,5 +10,6 @@ h2 {
 }
 
 .yes {
-    color: red;
+    color: gray;
+    text-decoration: line-through;
 }
