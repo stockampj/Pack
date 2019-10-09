@@ -18,15 +18,15 @@
                 @if (packItem.Packed == true)
                 {
                   <li class="yes"> 
-                    <input type="checkbox" name="item" value="@packItem.ID">
-                    @packItem.Name  @packItem.Size @packItem.Packed
+                    <input type="checkbox" name="item" value="@packItem.ID" checked>
+                    @packItem.Name  @packItem.Size 
                   </li>
                 }
                 else
                 {
                   <li> 
                     <input type="checkbox" name="item" value="@packItem.ID">
-                    @packItem.Name  @packItem.Size @packItem.Packed
+                    @packItem.Name  @packItem.Size 
                   </li>
                 }
 

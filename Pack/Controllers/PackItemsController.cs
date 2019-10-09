@@ -25,12 +25,16 @@ namespace Pack.Controllers
         [HttpPost("/packitems/update")]
         public ActionResult Index(List <int> item )
         {
+            List<PackItem> packList = PackItem.PackList;
+            foreach(PackItem itemObj in packList)
+            {
+                itemObj.Packed = false;
+            }
             foreach(int id in item)
             {
                PackItem packItem = PackItem.SearchID(id);
                packItem.Packed =  true;
             }
-            List<PackItem> packList = PackItem.PackList;
             return View("Index",packList);
         }
 
