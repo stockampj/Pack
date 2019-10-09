@@ -11,8 +11,9 @@ namespace Pack.Controllers
         public ActionResult Index(string name, string size)
         {
             PackItem packItem = new PackItem(name,size);
+            List<PackItem> packList = PackItem.PackList;
             
-            return View("Index", packItem);
+            return View("Index",packList);
         }
 
         [HttpGet("/packitems/new")]
