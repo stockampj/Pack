@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Parcel.Models;
+using Pack.Models;
 using System.Collections.Generic;
 
 namespace Pack.Controllers
